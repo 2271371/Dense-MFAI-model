@@ -286,9 +286,9 @@ class ResNet(nn.Module):
         # conv3_x层
         x = self.layer2(x)  # torch.Size([1, 512, 28, 28])
         # conv4_x层
-        #x = self.layer3(x)  # torch.Size([1, 1024, 14, 14])
+        x = self.layer3(x)  # torch.Size([1, 1024, 14, 14])
         # conv5_x层
-        #x = self.layer4(x)  # torch.Size([1, 2048, 7, 7])
+        x = self.layer4(x)  # torch.Size([1, 2048, 7, 7])
         x = Modified_SPPLayeravg(num_levels, x)
         #x = self.avgpool(x) # torch.Size([1, 2048, 1, 1]) / torch.Size([1, 512])
         #x = x.view(x.size(0), -1)   # torch.Size([1, 2048]) / torch.Size([1, 512])
